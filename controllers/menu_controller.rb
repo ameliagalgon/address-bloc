@@ -65,7 +65,8 @@ class MenuController
         print "Enter the entry number you want to view: "
         entry_number = gets.to_i
 
-        if entry = address_book.entries[entry_number]
+        if entry_number < address_book.entries.size
+            entry = address_book.entries[entry_number]
             system "clear"
             puts entry.to_s
             entry_submenu(entry)

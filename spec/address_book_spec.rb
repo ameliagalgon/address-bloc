@@ -34,6 +34,14 @@ RSpec.describe AddressBook do
             expect(new_entry.phone_number).to eq('010.012.1815')
             expect(new_entry.email).to eq('augusta.king@lovelace.com')
         end
+
+        it "does not add duplicate entries" do
+            book.AddressBook.new
+            book.add_entry('Ada Lovelace', '010.012.1815', 'augusta.king@lovelace.com')
+            book.add_entry('Ada Lovelace', '010.012.1815', 'augusta.king@lovelace.com')
+
+            expect(book.enties.size).to eq(1)
+        end
     end
 
     describe "#remove_entry" do
@@ -63,7 +71,7 @@ RSpec.describe AddressBook do
 
             expect(removed_entry).to eq(nil)
         end
-
+=begin
         it "raise an error if the improper number of arguments are used" do
             book = AddressBook.new
             book.add_entry('Ada Lovelace', '010.012.1815', 'augusta.king@lovelace.com')
@@ -79,5 +87,6 @@ RSpec.describe AddressBook do
 
             expect(book.entries.size).to eq(old_size - 1)
         end
+=end
     end
 end

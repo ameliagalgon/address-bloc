@@ -40,7 +40,7 @@ RSpec.describe AddressBook do
             book.add_entry('Ada Lovelace', '010.012.1815', 'augusta.king@lovelace.com')
             book.add_entry('Ada Lovelace', '010.012.1815', 'augusta.king@lovelace.com')
 
-            expect(book.enties.size).to eq(1)
+            expect(book.entries.size).to eq(1)
         end
     end
 

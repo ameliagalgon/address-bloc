@@ -8,12 +8,6 @@ class AddressBook
     end
 
     def add_entry(name, phone_number, email)
-=begin
-        if address_book.entries.include?([name, phone_number, email])
-            puts "hello"
-            return
-        end
-=end
         index = 0
         entries.each do |entry|
             if name < entry.name
